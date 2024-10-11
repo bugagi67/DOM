@@ -1,0 +1,28 @@
+
+body {
+color: #999;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
+#game_container {
+  border-collapse: collapse;
+  display: block;
+  margin: 0 auto;
+}
+
+.cell_move {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  border: 1px solid black;
+  background-color: aquamarine;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+}
+
