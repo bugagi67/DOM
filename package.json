@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest src --coverage",
-    "start": "webpack serve --mode development",
-    "build": "webpack --mode production",
+    "start": "webpack serve --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
     "babel": "babel src -d dist",
     "lint": "eslint .",
     "lintfix": "eslint . --fix"
