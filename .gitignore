@@ -5,7 +5,7 @@
 
 .husky
 build
-# dist_
+dist_
 .idea
 
 # Logs

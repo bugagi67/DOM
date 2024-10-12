@@ -9,7 +9,6 @@ branches:
 cache: node_modules  # кеширование
 
 install:
-  - npm cache clean --force
   - npm install  # команда установки зависимостей
   
 
@@ -33,4 +32,4 @@ deploy_script:  # скрипт развёртывания
   - git config --global user.name AppVeyor
   - git config --global user.email ci@appveyor.com
   - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "%USERPROFILE%/.git-credentials"
-  - npx push-dir --dir=dist --branch=gh-pages --force --verbose
+  - npx git subtree push --prefix dist origin gh-pages
