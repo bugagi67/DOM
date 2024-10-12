@@ -12,14 +12,6 @@ install:
   - npm cache clean --force
   - npm install  # команда установки зависимостей
 
-ps: |
-    if (-Not (Test-Path "C:\Users\appveyor\AppData\Roaming\npm")) {
-      Write-Host "npm directory is missing. Creating it now..."
-      New-Item -ItemType Directory -Force -Path "C:\Users\appveyor\AppData\Roaming\npm"
-    } else {
-      Write-Host "npm directory already exists."
-    }
-
 build: off  # отключаем встроенную в appveyor систему сборки
 
 # build_script:
