@@ -1,4 +1,4 @@
-import goblinImg from '../images/goblin.png';
+import goblinImg from "../images/goblin.png";
 
 export default class GoblinGame {
   constructor(boardSize) {
@@ -7,8 +7,8 @@ export default class GoblinGame {
   }
 
   gameInit() {
-    document.addEventListener('DOMContentLoaded', () => {
-      const gameBoard = document.querySelector('#game_container');
+    document.addEventListener("DOMContentLoaded", () => {
+      const gameBoard = document.querySelector("#game_container");
       this.createGameBoard(gameBoard);
       setInterval(this.moveGoblin, 800);
     });
@@ -16,10 +16,10 @@ export default class GoblinGame {
 
   createGameBoard(board) {
     for (let i = 0; i < this.boardSize; i += 1) {
-      const row = document.createElement('tr');
+      const row = document.createElement("tr");
       for (let j = 0; j < this.boardSize; j += 1) {
-        const cell = document.createElement('td');
-        cell.classList.add('cell_move');
+        const cell = document.createElement("td");
+        cell.classList.add("cell_move");
         row.appendChild(cell);
       }
       board.appendChild(row);
@@ -28,13 +28,13 @@ export default class GoblinGame {
   }
 
   moveGoblin() {
-    const cells = document.querySelectorAll('.cell_move');
+    const cells = document.querySelectorAll(".cell_move");
     const randomIndex = Math.floor(Math.random() * cells.length);
     const randomCell = cells[randomIndex];
     if (this.goblinImgElement) {
       this.goblinImgElement.remove();
     }
-    const img = document.createElement('img');
+    const img = document.createElement("img");
     img.src = goblinImg;
     randomCell.appendChild(img);
     this.goblinImgElement = img;
