@@ -21,6 +21,11 @@ test_script:
   - npm run lint  # скрипт тестирования
 
 deploy_script:  # скрипт развёртывания
+- ps: npm --version
+- ps: node --version
+- ps: git --version
+- ps: git subtree
+- ps: echo $env:PATH
   - ps: |
       if (-Not (Test-Path "C:\Users\appveyor\AppData\Roaming\npm")) {
       Write-Host "npm directory is missing. Creating it now..."
